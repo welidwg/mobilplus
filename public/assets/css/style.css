@@ -1,0 +1,399 @@
+@import url("https://fonts.googleapis.com/css2?family=Ysabeau+Infant&display=swap");
+
+:root {
+    --color-1: #224585;
+    --color-2: #f4a521;
+}
+body {
+    /* background-color: #224585e1; */
+    font-family: "Ysabeau Infant", sans-serif; /* filter: blur(5px); */
+    overflow-x: hidden;
+}
+.custom-nav {
+    position: absolute;
+    top: 0px !important;
+    left: 0px !important;
+    right: 0px !important;
+    background-color: transparent !important;
+    z-index: 200;
+    transition: 0.5s;
+}
+.custom-nav-fixed {
+    position: fixed;
+    top: 0px !important;
+    left: 0px !important;
+    right: 0px !important;
+    background-color: #2245855d !important;
+    z-index: 200;
+    transition: 0.5s;
+}
+.btn-color1 {
+    background-color: var(--color-1);
+    color: white;
+}
+.btn-color2 {
+    background-color: var(--color-2);
+    color: var(--color-1);
+}
+
+.nav-item a {
+    color: white !important;
+}
+.nav-item .active {
+    color: var(--color-2) !important;
+    font-weight: bold;
+}
+.color-1 {
+    color: var(--color-1) !important;
+}
+.color-2 {
+    color: var(--color-2) !important;
+}
+.bg-light-color2 {
+    background-color: #2245858c !important;
+}
+.bg-color-1 {
+    background-color: var(--color-1) !important;
+    color: white !important;
+    font-weight: 700;
+}
+.carousel-caption {
+    position: absolute !important;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.44);
+    width: 100% !important;
+}
+
+@media (max-width: 767.98px) {
+    /* Mobile devices */
+    .text-size-md {
+        font-size: 14px !important; /* Small font size for mobile */
+    }
+    .carousel,
+    .carousel-item,
+    .carousel-item img {
+        height: 300px !important;
+    }
+    .carousel-title {
+        font-size: 21px !important;
+    }
+    .carousel-parag {
+        font-size: 17px !important;
+    }
+    .carousel-caption .logo {
+        width: 200px;
+
+        height: 80px !important;
+    }
+}
+
+@media (min-width: 768px) {
+    /* Desktop devices */
+    .text-size-md {
+        font-size: 17px !important; /* Larger font size for desktop */
+    }
+    .carousel,
+    .carousel-item,
+    .carousel-item img {
+        height: 800px !important;
+    }
+    .carousel-title {
+        font-size: 45px !important;
+    }
+    .carousel-parag {
+        font-size: 30px !important;
+        width: 70% !important;
+    }
+    .carousel-caption .logo {
+        width: 300px;
+
+        height: 120px !important;
+    }
+}
+
+.gtco-testimonials {
+    position: relative;
+    margin-top: 10px;
+}
+.gtco-testimonials h2 {
+    font-size: 30px;
+    text-align: center;
+    color: #333333;
+    margin-bottom: 50px;
+}
+.gtco-testimonials .owl-stage-outer {
+    padding: 30px 0;
+}
+.gtco-testimonials .owl-nav {
+    display: none;
+}
+.gtco-testimonials .owl-dots {
+    text-align: center;
+}
+.gtco-testimonials .owl-dots span {
+    position: relative;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    display: block;
+    background: #fff;
+    border: 2px solid var(--color-1);
+    margin: 0 5px;
+}
+.gtco-testimonials .owl-dots .active {
+    box-shadow: none;
+}
+.gtco-testimonials .owl-dots .active span {
+    background: var(--color-2);
+    box-shadow: none;
+    height: 12px;
+    width: 12px;
+    margin-bottom: -1px;
+}
+.gtco-testimonials .card {
+    background: #fff;
+    box-shadow: 0 8px 17px -7px #22458559;
+    margin: 0 20px;
+    padding: 0 10px;
+    border-radius: 20px;
+    border: 0;
+    min-height: 400px !important;
+    height: 400px !important;
+}
+.card-about {
+    box-shadow: 0 8px 10px -7px #22458559;
+    background: #fff;
+}
+.gtco-testimonials .card .card-img-top {
+    max-width: 100px;
+    border-radius: 50%;
+    margin: 15px auto 0;
+    box-shadow: 0 8px 20px -4px #95abbb;
+    width: 100px;
+    height: 100px;
+}
+.gtco-testimonials .card h5 {
+    color: #01b0f8;
+    font-size: 21px;
+    line-height: 1.3;
+}
+.gtco-testimonials .card h5 span {
+    font-size: 18px;
+    color: #666666;
+}
+.gtco-testimonials .card p {
+    font-size: 18px;
+    color: #555;
+    padding-bottom: 15px;
+}
+.gtco-testimonials .active {
+    opacity: 0.5;
+    transition: all 0.3s;
+}
+.gtco-testimonials .center {
+    opacity: 1;
+}
+.gtco-testimonials .center h5 {
+    font-size: 24px;
+}
+.gtco-testimonials .center h5 span {
+    font-size: 20px;
+}
+.gtco-testimonials .center .card-img-top {
+    max-width: 100%;
+    height: 120px;
+    width: 120px;
+}
+
+@media (max-width: 767px) {
+    .gtco-testimonials {
+        margin-top: 20px;
+    }
+}
+.owl-carousel .owl-nav button.owl-next,
+.owl-carousel .owl-nav button.owl-prev {
+    outline: 0;
+}
+.owl-carousel button.owl-dot {
+    outline: 0;
+}
+.heading-section {
+    font-size: 28px;
+    color: #000;
+}
+
+.img {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.form-control {
+    height: 52px;
+    background: #fff;
+    color: #000;
+    font-size: 14px;
+    border-radius: 2px;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.form-control::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: rgba(0, 0, 0, 0.7) !important;
+}
+.form-control::-moz-placeholder {
+    /* Firefox 19+ */
+    color: rgba(0, 0, 0, 0.7) !important;
+}
+.form-control:-ms-input-placeholder {
+    /* IE 0+ */
+    color: rgba(0, 0, 0, 0.7) !important;
+}
+.form-control:-moz-placeholder {
+    /* Firefox 18- */
+    color: rgba(0, 0, 0, 0.7) !important;
+}
+.form-control:focus,
+.form-control:active {
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+textarea.form-control {
+    height: inherit !important;
+}
+
+.wrapper {
+    width: 100%;
+    -webkit-box-shadow: 0px 21px 41px -13px rgba(0, 0, 0, 0.18);
+    -moz-box-shadow: 0px 21px 41px -13px rgba(0, 0, 0, 0.18);
+    box-shadow: 0px 21px 41px -13px rgba(0, 0, 0, 0.18);
+}
+
+.contact-wrap {
+    background: #fff;
+}
+
+.info-wrap h3 {
+    color: #fff;
+}
+
+.info-wrap .dbox {
+    width: 100%;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 25px;
+}
+.info-wrap .dbox:last-child {
+    margin-bottom: 0;
+}
+.info-wrap .dbox p {
+    margin-bottom: 0;
+}
+.info-wrap .dbox p span {
+    font-weight: 600;
+    color: var(--color-1);
+}
+.info-wrap .dbox p a {
+    color: var(--color-1);
+}
+.info-wrap .dbox .icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+}
+.info-wrap .dbox .icon span {
+    font-size: 20px;
+    color: #fff;
+}
+.info-wrap .dbox .text {
+    width: calc(100% - 50px);
+}
+
+@media (min-width: 992px) {
+    .info-wrap {
+        margin-top: -20px;
+        margin-bottom: -20px;
+        border-radius: 5px;
+    }
+}
+
+.btn {
+    padding: 12px 16px;
+    cursor: pointer;
+    border-width: 1px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 400;
+    -webkit-box-shadow: 0px 10px 20px -6px rgba(0, 0, 0, 0.12);
+    -moz-box-shadow: 0px 10px 20px -6px rgba(0, 0, 0, 0.12);
+    box-shadow: 0px 10px 20px -6px rgba(0, 0, 0, 0.12);
+    position: relative;
+    margin-bottom: 20px;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+@media (prefers-reduced-motion: reduce) {
+    .btn {
+        -webkit-transition: none;
+        -o-transition: none;
+        transition: none;
+    }
+}
+.btn:hover,
+.btn:active,
+.btn:focus {
+    outline: none !important;
+    -webkit-box-shadow: 0px 10px 20px -6px rgba(0, 0, 0, 0.22) !important;
+    -moz-box-shadow: 0px 10px 20px -6px rgba(0, 0, 0, 0.22) !important;
+    box-shadow: 0px 10px 20px -6px rgba(0, 0, 0, 0.22) !important;
+}
+.btn.btn-primary {
+    background: #1089ff !important;
+    border-color: #1089ff !important;
+    color: #fff;
+}
+.btn.btn-primary:hover,
+.btn.btn-primary:focus {
+    border-color: #006fdc !important;
+    background: #006fdc !important;
+}
+
+#contactForm .error {
+    color: red;
+    font-size: 12px;
+}
+
+#contactForm .form-control {
+    font-size: 16px;
+}
+
+#message {
+    resize: vertical;
+}
+
+#form-message-warning,
+#form-message-success {
+    display: none;
+}
+
+#form-message-warning {
+    color: red;
+}
+
+#form-message-success {
+    color: #28a745;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.submitting {
+    float: left;
+    width: 100%;
+    padding: 10px 0;
+    display: none;
+    font-size: 16px;
+    font-weight: bold;
+}
