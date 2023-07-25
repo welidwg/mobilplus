@@ -42,6 +42,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"
         integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+        integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+        integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body class="p-0" style="padding: 0 !important">
@@ -67,7 +73,7 @@
                     <div class="nav-item mb-3 display-6"><a class=" off-link" href="#projects">Projets et
                             références</a>
                     </div>
-                    <div class="nav-item mb-3 display-6"><a class=" off-link" href="#contact">Nos contactes</a>
+                    <div class="nav-item mb-3 display-6"><a class=" off-link" href="#contact">Nos Contacts</a>
                     </div>
                 </div>
 
@@ -93,7 +99,7 @@
                         <li class="nav-item"><a class="nav-link" href="#about">Qui sommes nous?</a></li>
                         <li class="nav-item"><a class="nav-link" href="#service">Nos services</a></li>
                         <li class="nav-item"><a class="nav-link" href="#projects">Projets et références</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact">Nos contactes</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Nos Contacts</a></li>
                     </ul>
                     {{-- <button class="btn bg-color-1" type="button">Button</button> --}}
                 </div>
@@ -111,16 +117,17 @@
                 <button type="button" data-bs-target="#slider1" data-bs-slide-to="3" aria-label="Slide 4"></button>
             </div>
             <div class="carousel-inner">
-
                 <div class="carousel-item active" data-bs-interval="5000">
                     <img src="{{ secure_asset('assets/img/carousel5.jpg') }}" alt="" class="d-block w-100">
                     <div
                         class="carousel-caption w-100 h-100 d-flex flex-column justify-content-center align-items-center p-3">
 
-                        <h5 class="fw-bold text-white carousel-title" style="text-transform: capitalize">
+                        <h5 class="fw-bold text-white carousel-title" style="text-transform: capitalize"
+                            data-aos="fade-zoom-in" data-aos-delay="0" data-aos-offset="0" data-aos-duration="800">
                             <span class="color-2">Mobil</span><strong class="color-1">Plus</strong>
                         </h5>
-                        <h5 class="fw-bold text-white carousel-title" style="text-transform: uppercase">
+                        <h5 class="fw-bold text-white carousel-title" data-aos="fade-zoom-in" data-aos-delay="300"
+                            data-aos-offset="0" data-aos-duration="800" style="text-transform: uppercase">
                             Bienvenue sur notre site !
                         </h5>
 
@@ -158,7 +165,7 @@
             </div>
 
         </section>
-        <section class="p-4 " id="about">
+        <section class="p-4 my-3 " id="about" data-aos="zoom-in" data-aos-delay="0" data-aos-duration="1300">
             <div class="row justify-content-evenly">
                 {{-- <div class="col-md-6 px-3  d-none d-lg-block">
                     <img class="rounded-5 img-fluid w-100 fit-cover" style="min-height: 200px;"
@@ -208,7 +215,7 @@
             </div>
         </section>
 
-        <section id="service">
+        <section id="service" class="mb-3 py-3" data-aos="zoom-in" data-aos-delay="0" data-aos-duration="1300">
             <div class="row flex-column align-items-center justify-content-start py-4 px-2">
                 <h3 class="fw-bold pb-md-2 color-1 text-center " style="font-size: 1.8rem"><strong
                         class="color-2">Nos</strong> Services
@@ -281,7 +288,7 @@
 
         </section>
 
-        <section id="projects">
+        <section id="projects" class="py-3 mb-3 " data-aos="zoom-in" data-aos-delay="0" data-aos-duration="1300">
             <div class="row flex-column align-items-center justify-content-start py-4 px-2">
                 <h3 class="fw-bold pb-md-2  text-center " style="font-size: 1.8rem"><strong
                         class="color-2">Projets</strong> et <strong class="color-1">Références</strong>
@@ -293,11 +300,11 @@
             </div>
         </section>
 
-        <section id="contact">
+        <section id="contact" class="mb-3 py-3" data-aos="zoom-in" data-aos-delay="0" data-aos-duration="1300">
             <div class="row flex-column align-items-center justify-content-start py-4 px-2">
                 <h3 class="fw-bold pb-md-2 color-1  text-center " style="font-size: 1.8rem"><strong
                         class="color-2">Nos</strong>
-                    Contactes
+                    Contacts
                 </h3>
                 <p class="text-center text-size-md w-75">Pour plus d'informations sur nos services, ou pour un devis
                     gratuit,
@@ -411,7 +418,7 @@
                                 </div>
                                 <div class="col-md-5 d-flex align-items-stretch">
                                     <div class="info-wrap w-100 p-lg-5 p-4 text-dark">
-                                        <h3 class="mb-4 mt-md-4 color-2">Autres contactes</h3>
+                                        <h3 class="mb-4 mt-md-4 color-2">Autres Contacts</h3>
 
                                         <div class="dbox w-100 d-flex align-items-center justify-content-evenly">
                                             <div

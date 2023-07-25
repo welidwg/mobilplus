@@ -7,7 +7,7 @@ $(document).ready(function () {
                 center: true,
                 margin: 0,
                 responsiveClass: true,
-                autoplay: false,
+                autoplay: true,
                 nav: true,
                 dots: true,
                 loop: true,
@@ -60,4 +60,6 @@ $(document).ready(function () {
     }
 
     window.addEventListener("scroll", handleScroll);
+
+    AOS.init();
 });
