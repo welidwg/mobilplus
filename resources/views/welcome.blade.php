@@ -11,46 +11,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="{{ secure_asset('/assets/fa/css/all.min.css') }}">
     <!-- Bootstrap CSS v5.2.1 -->
+
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"
         integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ secure_asset('assets/css/style.css') }}">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.3/lottie.min.js"></script>
+
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
         integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
         integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
         integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"
         integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
+    {{-- <nav class="navbar navbar-light bg-light fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+         
+        </div>
+    </nav> --}}
+    <div class="offcanvas offcanvas-start bg-transparent" tabindex="-1" id="offcanvasNavbar"
+        style="max-width: 80vw;position: fixed;top:0;" aria-labelledby="offcanvasNavbarLabel">
+        <div class="bg-light-color1"></div>
+        <div class="offcanvas-header" style="z-index: 200">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel"></h5>
+            <button type="button" class="btn-close text-light" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body d-flex align-items-start justify-content-center" style="z-index: 200;">
+            <div class=" d-flex flex-column align-items-center justify-content-evenly h-100 ">
+                {{-- <img src="{{ secure_asset('assets/logo/logo.png') }}" alt="" class="img-fluid  "
+                    style="width: 150px"> --}}
+                <div>
+                    <div class="nav-item mb-3 display-6"><a class="off-link active" href="#slider1">Accueil</a>
+                    </div>
+                    <div class="nav-item mb-3 display-6"><a class=" off-link" href="#about">Qui sommes
+                            nous?</a></div>
+                    <div class="nav-item mb-3 display-6"><a class="off-link" href="#service">Nos services</a>
+                    </div>
+                    <div class="nav-item mb-3 display-6"><a class=" off-link" href="#projects">Projets et
+                            références</a>
+                    </div>
+                    <div class="nav-item mb-3 display-6"><a class=" off-link" href="#contact">Nos contactes</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
     <header class="custom-nav" id="nav">
         <!-- place navbar here -->
-        <nav class="navbar navbar-expand-md  py-2 ">
+        <nav class="navbar navbar-expand-lg  py-2 ">
             <div class="container"><a class="navbar-brand d-flex align-items-center" href="#">
                     <img src="{{ secure_asset('assets/logo/logo_white.png') }}" alt=""
                         class="img-fluid d-none d-lg-block " style="width: 100px">
                     <img src="{{ secure_asset('assets/logo/logo_white.png') }}" alt=""
                         class="img-fluid d-block d-lg-none " style="width: 95px">
-                </a><button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navcol-3"><span
+                </a><button class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"><span
                         class="visually-hidden">Toggle navigation</span><span
                         class="navbar-toggler-icon"></span></button>
                 <div id="navcol-3" class="collapse navbar-collapse">
                     <ul class="navbar-nav mx-auto">
-                        <li class="nav-item"><a class="nav-link active" href="#home">Accueil</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="#slider1">Accueil</a></li>
                         <li class="nav-item"><a class="nav-link" href="#about">Qui sommes nous?</a></li>
                         <li class="nav-item"><a class="nav-link" href="#service">Nos services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#projects">Projets et références</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Nos contactes</a></li>
                     </ul>
                     {{-- <button class="btn bg-color-1" type="button">Button</button> --}}
                 </div>
@@ -59,10 +108,10 @@
     </header>
 
     <main>
-        <div id="slider1" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <section id="slider1" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-indicators">
-                <button type="button" data-bs-target="#slider1" data-bs-slide-to="0" class="active" aria-current="true"
-                    aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#slider1" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#slider1" data-bs-slide-to="1" aria-label="Slide 2"></button>
                 <button type="button" data-bs-target="#slider1" data-bs-slide-to="2" aria-label="Slide 3"></button>
                 <button type="button" data-bs-target="#slider1" data-bs-slide-to="3" aria-label="Slide 4"></button>
@@ -114,8 +163,8 @@
                 </div>
             </div>
 
-        </div>
-        <div class="container-fluid py-4 " id="about">
+        </section>
+        <section class="p-4 " id="about">
             <div class="row justify-content-evenly">
                 {{-- <div class="col-md-6 px-3  d-none d-lg-block">
                     <img class="rounded-5 img-fluid w-100 fit-cover" style="min-height: 200px;"
@@ -163,19 +212,19 @@
                             src="{{ secure_asset('assets/img/carousel1.jpg') }}" /></div>
                 </div> --}}
             </div>
-        </div>
-        <div class="row flex-column align-items-center justify-content-start py-4 px-2">
-            <h3 class="fw-bold pb-md-2 color-1 text-center " style="font-size: 1.8rem"><strong
-                    class="color-2">Nos</strong> Services
-            </h3>
-            <p class="text-center text-size-md w-75">Notre entreprise offre une variété de services en plomberie et
-                tous
-                travaux de
-                rénovation intérieur,
-                toujours dans le souci du détail et de la qualité.</p>
-        </div>
-        <section id="service">
+        </section>
 
+        <section id="service">
+            <div class="row flex-column align-items-center justify-content-start py-4 px-2">
+                <h3 class="fw-bold pb-md-2 color-1 text-center " style="font-size: 1.8rem"><strong
+                        class="color-2">Nos</strong> Services
+                </h3>
+                <p class="text-center text-size-md w-75">Notre entreprise offre une variété de services en plomberie et
+                    tous
+                    travaux de
+                    rénovation intérieur,
+                    toujours dans le souci du détail et de la qualité.</p>
+            </div>
             <div class="gtco-testimonials">
                 <div class="owl-carousel owl-carousel1 owl-theme">
                     <div>
@@ -237,29 +286,31 @@
 
 
         </section>
-        <div class="row flex-column align-items-center justify-content-start py-4 px-2">
-            <h3 class="fw-bold pb-md-2  text-center " style="font-size: 1.8rem"><strong
-                    class="color-2">Projets</strong> et <strong class="color-1">références</strong>
-            </h3>
-            <p class="text-center text-size-md w-75">Visitez cette page pour voir certains des projets sur lesquels
-                nous
-                avons travaillé. Nous sommes fiers de la qualité de notre travail et nous aimons partager nos succès
-                avec nos futurs clients.</p>
-        </div>
-        <section id="service mb-3">
-        </section>
-        <div class="row flex-column align-items-center justify-content-start py-4 px-2">
-            <h3 class="fw-bold pb-md-2 color-1  text-center " style="font-size: 1.8rem"><strong
-                    class="color-2">Nos</strong>
-                contactes
-            </h3>
-            <p class="text-center text-size-md w-75">Pour plus d'informations sur nos services, ou pour un devis
-                gratuit,
-                n'hésitez pas à nous contacter. Notre équipe sera ravie de répondre à vos questions et de discuter de la
-                manière dont nous pouvons vous aider avec vos besoins de travaux de rénovation.</p>
-        </div>
-        <section id="contact">
 
+        <section id="projects">
+            <div class="row flex-column align-items-center justify-content-start py-4 px-2">
+                <h3 class="fw-bold pb-md-2  text-center " style="font-size: 1.8rem"><strong
+                        class="color-2">Projets</strong> et <strong class="color-1">Références</strong>
+                </h3>
+                <p class="text-center text-size-md w-75">Visitez cette page pour voir certains des projets sur lesquels
+                    nous
+                    avons travaillé. Nous sommes fiers de la qualité de notre travail et nous aimons partager nos succès
+                    avec nos futurs clients.</p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="row flex-column align-items-center justify-content-start py-4 px-2">
+                <h3 class="fw-bold pb-md-2 color-1  text-center " style="font-size: 1.8rem"><strong
+                        class="color-2">Nos</strong>
+                    Contactes
+                </h3>
+                <p class="text-center text-size-md w-75">Pour plus d'informations sur nos services, ou pour un devis
+                    gratuit,
+                    n'hésitez pas à nous contacter. Notre équipe sera ravie de répondre à vos questions et de discuter
+                    de la
+                    manière dont nous pouvons vous aider avec vos besoins de travaux de rénovation.</p>
+            </div>
             <div class="container">
 
                 <div class="row justify-content-center">
@@ -468,12 +519,29 @@
         const targetDiv = document.getElementById('nav');
 
         // Function to add or remove the class based on the scroll position
+        const sections = document.querySelectorAll("section");
+        const navLi = document.querySelectorAll(".nav-link");
+        const offLi = document.querySelectorAll(".off-link");
+
         function handleScroll() {
             if (window.scrollY > 200) {
                 targetDiv.classList.add('custom-nav-fixed');
             } else {
                 targetDiv.classList.remove('custom-nav-fixed');
             }
+            var current = "";
+            sections.forEach((section, index) => {
+                const rect = section.getBoundingClientRect();
+                const offset = 100; // adjust this value to control when the link becomes active
+
+                if (rect.top >= -offset && rect.top <= offset) {
+                    navLi.forEach((link) => link.classList.remove('active'));
+                    navLi[index].classList.add('active');
+
+                    offLi.forEach((link) => link.classList.remove('active'));
+                    offLi[index].classList.add('active');
+                }
+            });
         }
 
         window.addEventListener('scroll', handleScroll);
