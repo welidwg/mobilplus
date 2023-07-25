@@ -18,7 +18,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ secure_asset('assets/css/style.css') }}">
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.3/lottie.min.js"></script>
 
     <link rel="stylesheet"
@@ -42,17 +44,8 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
-<body>
-    {{-- <nav class="navbar navbar-light bg-light fixed-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-                aria-controls="offcanvasNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-         
-        </div>
-    </nav> --}}
+<body class="p-0" style="padding: 0 !important">
+
     <div class="offcanvas offcanvas-start bg-transparent" tabindex="-1" id="offcanvasNavbar"
         style="max-width: 80vw;position: fixed;top:0;" aria-labelledby="offcanvasNavbarLabel">
         <div class="bg-light-color1"></div>
@@ -82,6 +75,7 @@
 
         </div>
     </div>
+
     <header class="custom-nav" id="nav">
         <!-- place navbar here -->
         <nav class="navbar navbar-expand-lg  py-2 ">
@@ -106,8 +100,8 @@
             </div>
         </nav>
     </header>
+    <div class="ccontainer-fullwidth m-0" style="margin: 0 !important;padding: 0 !important">
 
-    <main>
         <section id="slider1" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#slider1" data-bs-slide-to="0" class="active"
@@ -464,7 +458,7 @@
         </section>
 
 
-    </main>
+    </div>
 
     <footer>
         <!-- place footer here -->
@@ -474,78 +468,8 @@
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
     </script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
-        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
-    </script>
+    <script src="{{ secure_asset('js/theme.js') }}"></script>
 
-    <script>
-        (function() {
-            "use strict";
-
-            var carousels = function() {
-                $(".owl-carousel1").owlCarousel({
-                    center: true,
-                    margin: 0,
-                    responsiveClass: true,
-                    autoplay: false,
-                    nav: true,
-                    dots: true,
-                    loop: true,
-                    responsive: {
-                        0: {
-                            items: 1,
-                            nav: true,
-
-                        },
-                        680: {
-                            items: 2,
-                            nav: true,
-                            loop: false
-                        },
-                        1000: {
-                            items: 3,
-                            nav: true,
-
-                        }
-                    }
-                });
-            };
-
-            (function($) {
-                carousels();
-            })(jQuery);
-        })();
-
-        const targetDiv = document.getElementById('nav');
-
-        // Function to add or remove the class based on the scroll position
-        const sections = document.querySelectorAll("section");
-        const navLi = document.querySelectorAll(".nav-link");
-        const offLi = document.querySelectorAll(".off-link");
-
-        function handleScroll() {
-            if (window.scrollY > 200) {
-                targetDiv.classList.add('custom-nav-fixed');
-            } else {
-                targetDiv.classList.remove('custom-nav-fixed');
-            }
-            var current = "";
-            sections.forEach((section, index) => {
-                const rect = section.getBoundingClientRect();
-                const offset = 100; // adjust this value to control when the link becomes active
-
-                if (rect.top >= -offset && rect.top <= offset) {
-                    navLi.forEach((link) => link.classList.remove('active'));
-                    navLi[index].classList.add('active');
-
-                    offLi.forEach((link) => link.classList.remove('active'));
-                    offLi[index].classList.add('active');
-                }
-            });
-        }
-
-        window.addEventListener('scroll', handleScroll);
-    </script>
 </body>
 
 </html>
