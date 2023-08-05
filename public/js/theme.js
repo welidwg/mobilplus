@@ -15,6 +15,7 @@ $(document).ready(function () {
                     0: {
                         items: 1,
                         nav: true,
+                        margin: 0,
                     },
                     680: {
                         items: 2,
@@ -41,9 +42,11 @@ $(document).ready(function () {
 
     function handleScroll() {
         if (window.scrollY > 200) {
+            $("#up").fadeIn();
             targetDiv.classList.add("custom-nav-fixed");
         } else {
             targetDiv.classList.remove("custom-nav-fixed");
+            $("#up").fadeOut();
         }
         sections.forEach((section, index) => {
             const rect = section.getBoundingClientRect();
@@ -60,6 +63,13 @@ $(document).ready(function () {
     }
 
     window.addEventListener("scroll", handleScroll);
-
+    $("#up").click(function () {
+        $("html, body").animate(
+            {
+                scrollTop: 0,
+            },
+            "slow"
+        );
+    });
     AOS.init();
 });

@@ -73,33 +73,194 @@
                     <div class="nav-item mb-3 display-6"><a class=" off-link" href="#projects">Projets et
                             références</a>
                     </div>
-                    <div class="nav-item mb-3 display-6"><a class=" off-link" href="#contact">Nos Contacts</a>
-                    </div>
+                    {{-- <div class="nav-item mb-3 display-6"><a class=" off-link" href="#contact">Nos Contacts</a>
+                    </div> --}}
                 </div>
 
             </div>
 
         </div>
     </div>
+    {{-- contact_off --}}
+
+
+    <div class="offcanvas offcanvas-start " style="width: 500px" data-bs-scroll="true" tabindex="-1" id="contact_off"
+        aria-labelledby="Enable both scrolling & backdrop">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="Enable both scrolling & backdrop"></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body =">
+            <div class="row justify-content-center">
+                <div class="col-lg-12 col-md-12">
+                    <div class="wrapper">
+                        <div class="row no-gutters">
+                            <div class="col-md-12 d-flex align-items-stretch">
+                                <div class="contact-wrap w-100 p-md-5 p-4">
+                                    <h3 class="mb-4 color-1">Contactez-nous par email</h3>
+                                    <div class="alert alert-success alert-dismissible fade show" role="alert"
+                                        style="display: none" id="success">
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                            aria-label="Close"></button>
+                                        Nous avons bien reçu votre message.
+                                    </div>
+                                    <div class="alert alert-danger alert-dismissible fade show" role="alert"
+                                        style="display: none" id="error">
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                            aria-label="Close"></button>
+                                        Opération échouée. Veuillez réssayez plus tard.
+                                    </div>
+
+
+                                    <script>
+                                        var alertList = document.querySelectorAll('.alert');
+                                        alertList.forEach(function(alert) {
+                                            new bootstrap.Alert(alert)
+                                        })
+                                    </script>
+
+
+                                    <form method="POST" action="{{ route('email.send') }}" id="contactForm"
+                                        name="contactForm">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control mb-3" name="name"
+                                                        id="name" placeholder="Votre nom" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <input type="email" class="form-control mb-3" required
+                                                        name="email" id="email" placeholder="Votre mail">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control mb-3" name="subject"
+                                                        id="subject" placeholder="Sujet">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <textarea name="message" class="form-control mb-3" id="message" cols="30" rows="7"
+                                                        placeholder="Message"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <button
+                                                        class="btn d-flex btn-color1 justify-content-center align-items-center fw-bold w-100 ">
+                                                        <span class="mx-1">Envoyer</span>
+                                                        <div class="d-flex justify-content-center align-items-center">
+                                                            <div class="spinner-border color-2 spinner-border-sm"
+                                                                id="spinner" style="display: none" role="status">
+                                                                <span class="visually-hidden">Loading...</span>
+                                                            </div>
+                                                        </div>
+                                                    </button>
+                                                    <div class="submitting"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        @csrf
+                                    </form>
+                                    <script>
+                                        $("#contactForm").on("submit", (e) => {
+                                            $("#spinner").fadeIn()
+                                            e.preventDefault();
+                                            axios.post(e.target.action, $("#contactForm").serialize())
+                                                .then(res => {
+                                                    console.log(res)
+                                                    $("#success").fadeIn()
+                                                    $("#contactForm").trigger("reset")
+                                                    $("#spinner").fadeOut()
+
+
+                                                })
+                                                .catch(err => {
+                                                    console.error(err);
+                                                    $("#error").fadeIn()
+                                                    $("#spinner").fadeOut()
+
+
+                                                })
+
+                                        })
+                                    </script>
+                                </div>
+                            </div>
+                            {{-- <div class="col-md-5 d-flex align-items-stretch">
+                                <div class="info-wrap w-100 p-lg-5 p-4 text-dark">
+                                    <h3 class="mb-4 mt-md-4 color-2">Autres Contacts</h3>
+
+                                    <div class="dbox w-100 d-flex align-items-center justify-content-evenly">
+                                        <div
+                                            class="icon d-flex align-items-center mx-2 bg-light justify-content-center">
+                                            <span class="far fa-map-marker color-1"></span>
+                                        </div>
+                                        <div class="text pl-3 text-dark">
+                                            <p><span class="">Adresse:</span> 198 West 21th Street, Suite 721
+                                                New York NY
+                                                10016</p>
+                                        </div>
+                                    </div>
+                                    <div class="dbox w-100 d-flex align-items-center justify-content-evenly">
+                                        <div
+                                            class="icon d-flex align-items-center mx-2 bg-light justify-content-center">
+                                            <span class="far fa-phone color-1"></span>
+                                        </div>
+                                        <div class="text pl-3 text-dark">
+                                            <p><span class="">Téléphone:</span> <a class="text-decoration-none"
+                                                    href="tel://1234567920">+
+                                                    1235 2355 98</a></p>
+                                        </div>
+                                    </div>
+                                    <hr>
+
+                                    <div class="dbox w-100 d-flex align-items-center justify-content-center">
+                                        <div
+                                            class="icon d-flex align-items-center mx-2 bg-light justify-content-center">
+                                            <span class="fab fa-facebook color-1"></span>
+                                        </div>
+                                        <div
+                                            class="icon d-flex align-items-center mx-2 bg-light justify-content-center">
+                                            <span class="fab fa-linkedin-in color-1"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> --}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <header class="custom-nav" id="nav">
         <!-- place navbar here -->
-        <nav class="navbar navbar-expand-lg  py-2 ">
-            <div class="container"><a class="navbar-brand d-flex align-items-center" href="#">
+        <nav class="navbar navbar-expand-lg  py-2  ">
+            <div class="container">
+                <a class="navbar-brand " href="#">
                     <img src="{{ secure_asset('assets/logo/logo_white.png') }}" alt=""
-                        class="img-fluid d-none d-lg-block " style="width: 100px">
+                        class="img-fluid d-none d-lg-block " style="width: 140px">
                     <img src="{{ secure_asset('assets/logo/logo_white.png') }}" alt=""
                         class="img-fluid d-block d-lg-none " style="width: 95px">
-                </a><button class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"><span
+                </a>
+                <div class="d-flex phone">
+                    <a class="text-white text-decoration-none " href="tel:+33 06 52 45 55 32"> <i
+                            class="fas fa-phone-alt" aria-hidden="true"></i> +33 06 52 45 55 32 </a>
+                </div>
+                <button class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"><span
                         class="visually-hidden">Toggle navigation</span><span
                         class="navbar-toggler-icon"></span></button>
                 <div id="navcol-3" class="collapse navbar-collapse">
                     <ul class="navbar-nav mx-auto">
-                        <li class="nav-item"><a class="nav-link active" href="#slider1">Accueil</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#about">Qui sommes nous?</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#service">Nos services</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#projects">Projets et références</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact">Nos Contacts</a></li>
+                        <li class="nav-item"><a class="nav-link active fs-5" href="#slider1">Accueil</a></li>
+                        <li class="nav-item"><a class="nav-link fs-5" href="#about">Qui sommes nous?</a></li>
+                        <li class="nav-item"><a class="nav-link fs-5" href="#service">Nos services</a></li>
+                        <li class="nav-item"><a class="nav-link fs-5" href="#projects">Projets et références</a></li>
+                        {{-- <li class="nav-item"><a class="nav-link" href="#contact">Nos Contacts</a></li> --}}
                     </ul>
                     {{-- <button class="btn bg-color-1" type="button">Button</button> --}}
                 </div>
@@ -118,18 +279,21 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active" data-bs-interval="5000">
-                    <img src="{{ secure_asset('assets/img/carousel5.jpg') }}" alt="" class="d-block w-100">
+                    <img src="{{ secure_asset('assets/img/carousel1.jpg') }}" alt="" class="d-block w-100">
                     <div
-                        class="carousel-caption w-100 h-100 d-flex flex-column justify-content-center align-items-center p-3">
+                        class="carousel-caption w-100 h-100 d-flex flex-column justify-content-center align-items-center  p-3">
 
-                        <h5 class="fw-bold text-white carousel-title" style="text-transform: capitalize"
+                        {{-- <h5 class="fw-bold text-white carousel-title" style="text-transform: capitalize"
                             data-aos="fade-zoom-in" data-aos-delay="0" data-aos-offset="0" data-aos-duration="800">
                             <span class="color-2">Mobil</span><strong class="color-1">Plus</strong>
+                        </h5> --}}
+                        <h5 class="fw-bold text-white carousel-title " data-aos="fade-zoom-in" data-aos-delay="300"
+                            data-aos-offset="0" data-aos-duration="800">
+                            Société de <br>
+                            <span class=""> <strong class="color-2">Rénova</strong>tion</span>
+
                         </h5>
-                        <h5 class="fw-bold text-white carousel-title" data-aos="fade-zoom-in" data-aos-delay="300"
-                            data-aos-offset="0" data-aos-duration="800" style="text-transform: uppercase">
-                            Bienvenue sur notre site !
-                        </h5>
+
 
                     </div>
                 </div>
@@ -185,7 +349,7 @@
                         projets de plomberie. <br>Chaque projet, grand ou petit, est traité avec le même souci du détail
                         et du professionnalisme.</span>
                 </div>
-                <div class="col-lg-3" id="cle" style="max-height: 300px">
+                <div class="col-lg-3" id="cle">
 
                 </div>
                 <script>
@@ -215,7 +379,7 @@
             </div>
         </section>
 
-        <section id="service" class="mb-3 py-3" data-aos="zoom-in" data-aos-delay="0" data-aos-duration="1300">
+        <section id="service" class="mb-3 " data-aos="zoom-in" data-aos-delay="0" data-aos-duration="1300">
             <div class="row flex-column align-items-center justify-content-start py-4 px-2">
                 <h3 class="fw-bold pb-md-2 color-1 text-center " style="font-size: 1.8rem"><strong
                         class="color-2">Nos</strong> Services
@@ -300,173 +464,25 @@
             </div>
         </section>
 
-        <section id="contact" class="mb-3 py-3" data-aos="zoom-in" data-aos-delay="0" data-aos-duration="1300">
-            <div class="row flex-column align-items-center justify-content-start py-4 px-2">
-                <h3 class="fw-bold pb-md-2 color-1  text-center " style="font-size: 1.8rem"><strong
-                        class="color-2">Nos</strong>
-                    Contacts
-                </h3>
-                <p class="text-center text-size-md w-75">Pour plus d'informations sur nos services, ou pour un devis
-                    gratuit,
-                    n'hésitez pas à nous contacter. Notre équipe sera ravie de répondre à vos questions et de discuter
-                    de la
-                    manière dont nous pouvons vous aider avec vos besoins de travaux de rénovation.</p>
-            </div>
-            <div class="container">
-
-                <div class="row justify-content-center">
-                    <div class="col-lg-10 col-md-12">
-                        <div class="wrapper">
-                            <div class="row no-gutters">
-                                <div class="col-md-7 d-flex align-items-stretch">
-                                    <div class="contact-wrap w-100 p-md-5 p-4">
-                                        <h3 class="mb-4 color-1">Contactez-nous par email</h3>
-                                        <div class="alert alert-success alert-dismissible fade show" role="alert"
-                                            style="display: none" id="success">
-                                            <button type="button" class="btn-close" data-bs-dismiss="alert"
-                                                aria-label="Close"></button>
-                                            Nous avons bien reçu votre message.
-                                        </div>
-                                        <div class="alert alert-danger alert-dismissible fade show" role="alert"
-                                            style="display: none" id="error">
-                                            <button type="button" class="btn-close" data-bs-dismiss="alert"
-                                                aria-label="Close"></button>
-                                            Opération échouée. Veuillez réssayez plus tard.
-                                        </div>
-
-
-                                        <script>
-                                            var alertList = document.querySelectorAll('.alert');
-                                            alertList.forEach(function(alert) {
-                                                new bootstrap.Alert(alert)
-                                            })
-                                        </script>
-
-
-                                        <form method="POST" action="{{ route('email.send') }}" id="contactForm"
-                                            name="contactForm">
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control mb-3"
-                                                            name="name" id="name" placeholder="Votre nom"
-                                                            required>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <input type="email" class="form-control mb-3" required
-                                                            name="email" id="email" placeholder="Votre mail">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-12">
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control mb-3"
-                                                            name="subject" id="subject" placeholder="Sujet">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-12">
-                                                    <div class="form-group">
-                                                        <textarea name="message" class="form-control mb-3" id="message" cols="30" rows="7"
-                                                            placeholder="Message"></textarea>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-12">
-                                                    <div class="form-group">
-                                                        <button
-                                                            class="btn d-flex btn-color1 justify-content-center align-items-center fw-bold w-100 ">
-                                                            <span class="mx-1">Envoyer</span>
-                                                            <div
-                                                                class="d-flex justify-content-center align-items-center">
-                                                                <div class="spinner-border color-2 spinner-border-sm"
-                                                                    id="spinner" style="display: none"
-                                                                    role="status">
-                                                                    <span class="visually-hidden">Loading...</span>
-                                                                </div>
-                                                            </div>
-                                                        </button>
-                                                        <div class="submitting"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            @csrf
-                                        </form>
-                                        <script>
-                                            $("#contactForm").on("submit", (e) => {
-                                                $("#spinner").fadeIn()
-                                                e.preventDefault();
-                                                axios.post(e.target.action, $("#contactForm").serialize())
-                                                    .then(res => {
-                                                        console.log(res)
-                                                        $("#success").fadeIn()
-                                                        $("#contactForm").trigger("reset")
-                                                        $("#spinner").fadeOut()
-
-
-                                                    })
-                                                    .catch(err => {
-                                                        console.error(err);
-                                                        $("#error").fadeIn()
-                                                        $("#spinner").fadeOut()
-
-
-                                                    })
-
-                                            })
-                                        </script>
-                                    </div>
-                                </div>
-                                <div class="col-md-5 d-flex align-items-stretch">
-                                    <div class="info-wrap w-100 p-lg-5 p-4 text-dark">
-                                        <h3 class="mb-4 mt-md-4 color-2">Autres Contacts</h3>
-
-                                        <div class="dbox w-100 d-flex align-items-center justify-content-evenly">
-                                            <div
-                                                class="icon d-flex align-items-center mx-2 bg-light justify-content-center">
-                                                <span class="far fa-map-marker color-1"></span>
-                                            </div>
-                                            <div class="text pl-3 text-dark">
-                                                <p><span class="">Adresse:</span> 198 West 21th Street, Suite 721
-                                                    New York NY
-                                                    10016</p>
-                                            </div>
-                                        </div>
-                                        <div class="dbox w-100 d-flex align-items-center justify-content-evenly">
-                                            <div
-                                                class="icon d-flex align-items-center mx-2 bg-light justify-content-center">
-                                                <span class="far fa-phone color-1"></span>
-                                            </div>
-                                            <div class="text pl-3 text-dark">
-                                                <p><span class="">Téléphone:</span> <a
-                                                        class="text-decoration-none" href="tel://1234567920">+
-                                                        1235 2355 98</a></p>
-                                            </div>
-                                        </div>
-                                        <hr>
-
-                                        <div class="dbox w-100 d-flex align-items-center justify-content-center">
-                                            <div
-                                                class="icon d-flex align-items-center mx-2 bg-light justify-content-center">
-                                                <span class="fab fa-facebook color-1"></span>
-                                            </div>
-                                            <div
-                                                class="icon d-flex align-items-center mx-2 bg-light justify-content-center">
-                                                <span class="fab fa-linkedin-in color-1"></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </section>
 
 
     </div>
-
+    <div class="sidebar shadow-sm " data-aos="fade-left" data-aos-delay="700" data-aos-duration="1300">
+        <div class="social d-flex align-items-center ctc justify-content-center p-2"
+            style="border-top-left-radius: 8px;">
+            <a href="#contact_off" data-bs-toggle="offcanvas" class=""><span class="sideway"> <i
+                        class="fal fa-envelope" aria-hidden="true"></i>&nbsp; Nous contactez</span></a>
+        </div>
+        <div class="social d-flex align-items-center whatsapp justify-content-center p-2">
+            <a href="https://web.whatsapp.com/send?phone=+330652455532" target="_blank" class=""><i
+                    class="fab fa-whatsapp" aria-hidden="true"></i></a>
+        </div>
+        <div class="social d-flex align-items-center facebook justify-content-center p-2"
+            style="border-bottom-left-radius: 8px;">
+            <a href="#" class=""><i class="fab fa-facebook" aria-hidden="true"></i></a>
+        </div>
+    </div>
+    <button id="up" class="up btn rounded-circle bg-color-1"><i class="fal fa-arrow-up"></i></button>
     <footer>
         <!-- place footer here -->
     </footer>
@@ -474,6 +490,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
     </script>
+    <script></script>
 
     <script src="{{ secure_asset('js/theme.js') }}"></script>
 

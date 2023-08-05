@@ -13,7 +13,7 @@ class EmailController extends Controller
     {
         try {
             $this->validate($request, ['message' => 'bail|required']);
-            Mail::to("walidgueddari1899@gmail.com")->bcc("test@gmail.com")->queue(new ContactMail($request->all()));
+            Mail::to("contact@mobilplus.fr")->bcc("test@gmail.com")->queue(new ContactMail($request->all()));
             return back()->with("success", "done");
         } catch (\Throwable $th) {
             return back()->with("error", $th->getMessage());
