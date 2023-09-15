@@ -7,9 +7,9 @@
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <link rel="shortcut icon" href="{{ secure_asset('assets/logo/logo.png') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('assets/logo/logo.png') }}" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="{{ secure_asset('/assets/fa/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('/assets/fa/css/all.min.css') }}">
     <!-- Bootstrap CSS v5.2.1 -->
 
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"
@@ -17,7 +17,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ secure_asset('assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
         integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
     </script>
@@ -61,7 +61,7 @@
         </div>
         <div class="offcanvas-body d-flex align-items-start justify-content-center" style="z-index: 200;">
             <div class=" d-flex flex-column align-items-center justify-content-evenly h-100 ">
-                {{-- <img src="{{ secure_asset('assets/logo/logo.png') }}" alt="" class="img-fluid  "
+                {{-- <img src="{{ asset('assets/logo/logo.png') }}" alt="" class="img-fluid  "
                     style="width: 150px"> --}}
                 <div id="cont_phone" data-aos="fade-left" data-aos-delay="0" data-aos-duration="1300">
                     <div class="nav-item mb-3 display-6"><a class="off-link active" href="#slider1">Accueil</a>
@@ -242,9 +242,9 @@
         <nav class="navbar navbar-expand-lg  py-2  ">
             <div class="container">
                 <a class="navbar-brand " href="#">
-                    <img src="{{ secure_asset('assets/logo/logo_white.png') }}" alt=""
+                    <img src="{{ asset('assets/logo/logo_white.png') }}" alt=""
                         class="img-fluid d-none d-lg-block " style="width: 140px">
-                    <img src="{{ secure_asset('assets/logo/logo_white.png') }}" alt=""
+                    <img src="{{ asset('assets/logo/logo_white.png') }}" alt=""
                         class="img-fluid d-block d-lg-none " style="width: 95px">
                 </a>
                 <div class="d-flex phone">
@@ -279,7 +279,7 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active" data-bs-interval="5000">
-                    <img src="{{ secure_asset('assets/img/carousel1.jpg') }}" alt="" class="d-block w-100">
+                    <img src="{{ asset('assets/img/carousel1.jpg') }}" alt="" class="d-block w-100">
                     <div
                         class="carousel-caption w-100 h-100 d-flex flex-column justify-content-center align-items-center  p-3">
 
@@ -298,7 +298,7 @@
                     </div>
                 </div>
                 <div class="carousel-item" data-bs-interval="10000">
-                    <img src="{{ secure_asset('assets/img/carousel2.jpg') }}" alt="" class="d-block w-100">
+                    <img src="{{ asset('assets/img/carousel2.jpg') }}" alt="" class="d-block w-100">
                     <div class="carousel-caption w-100 h-100 d-flex">
                         <h5 class=" carousel-parag my-auto mx-auto p-3"> Nous sommes
                             fiers de vous présenter notre
@@ -307,7 +307,7 @@
                 </div>
                 <div class="carousel-item" data-bs-interval="10000">
 
-                    <img src="{{ secure_asset('assets/img/carousel3.jpg') }}" alt="" class="d-block w-100">
+                    <img src="{{ asset('assets/img/carousel3.jpg') }}" alt="" class="d-block w-100">
                     <div class="carousel-caption w-100 h-100 d-flex">
                         <h5 class=" carousel-parag my-auto mx-auto p-3"> Avec une expérience de plusieurs années, une
                             équipe
@@ -317,7 +317,7 @@
                 </div>
                 <div class="carousel-item" data-bs-interval="10000">
 
-                    <img src="{{ secure_asset('assets/img/carousel4.jpg') }}" alt="" class="d-block w-100">
+                    <img src="{{ asset('assets/img/carousel4.jpg') }}" alt="" class="d-block w-100">
                     <div class="carousel-caption w-100 h-100 d-flex">
                         <h5 class=" carousel-parag my-auto mx-auto p-3"> Notre mission ? Vous aidez à créer, entretenir
                             et
@@ -333,7 +333,7 @@
             <div class="row justify-content-evenly">
                 {{-- <div class="col-md-6 px-3  d-none d-lg-block">
                     <img class="rounded-5 img-fluid w-100 fit-cover" style="min-height: 200px;"
-                        src="{{ secure_asset('assets/img/carousel5.jpg') }}" />
+                        src="{{ asset('assets/img/carousel5.jpg') }}" />
                 </div> --}}
                 <div class="col-lg-6  p-4  rounded-5 card-about">
                     <h3 class=" fw-bold pb-md-4 color-1" style="font-size: 1.8rem"><strong
@@ -358,7 +358,7 @@
                         renderer: 'svg', // You can choose 'svg', 'canvas', or 'html' (default is 'svg')
                         loop: true,
                         autoplay: true,
-                        path: '{{ secure_asset('assets/lottie/worker.json') }}', // Replace with the actual path to your Lottie JSON file
+                        path: '{{ asset('assets/lottie/worker.json') }}', // Replace with the actual path to your Lottie JSON file
                     });
                 </script>
             </div>
@@ -374,7 +374,7 @@
                 </div>
                 {{-- <div class="col-md-6 order-first order-md-last d-block d-lg-none">
                     <div><img class="rounded-5 img-fluid w-100 fit-cover" style="min-height: 200px;"
-                            src="{{ secure_asset('assets/img/carousel1.jpg') }}" /></div>
+                            src="{{ asset('assets/img/carousel1.jpg') }}" /></div>
                 </div> --}}
             </div>
         </section>
@@ -492,7 +492,7 @@
     </script>
     <script></script>
 
-    <script src="{{ secure_asset('js/theme.js') }}"></script>
+    <script src="{{ asset('js/theme.js') }}"></script>
 
 </body>
 
