@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>{{ env('APP_NAME', 'MobiPlus') }}
+    <title>{{ env('APP_NAME', 'MobilPlus') }}
     </title>
 
     <!-- Required meta tags -->
