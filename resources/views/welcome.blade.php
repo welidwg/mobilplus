@@ -474,8 +474,11 @@
                         class="fal fa-envelope" aria-hidden="true"></i>&nbsp; Nous contactez</span></a>
         </div>
         <div class="social d-flex align-items-center whatsapp justify-content-center p-2">
-            <a href="https://web.whatsapp.com/send?phone=+330652455532" target="_blank" class=""><i
+            {{-- <a href="https://web.whatsapp.com/send?phone=+330652455532" target="_blank" class=""><i
+                    class="fab fa-whatsapp" aria-hidden="true"></i></a> --}}
+            <a href=" https://api.whatsapp.com/send?phone=330652455532" target="_blank" class=""><i
                     class="fab fa-whatsapp" aria-hidden="true"></i></a>
+
         </div>
         <div class="social d-flex align-items-center facebook justify-content-center p-2"
             style="border-bottom-left-radius: 8px;">
