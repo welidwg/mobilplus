@@ -71,5 +71,15 @@ $(document).ready(function () {
             "slow"
         );
     });
-    AOS.init();
+    AOS.init({
+        once: true,
+        easing: "ease-in-out",
+    });
+    var iconButton = $("#open_side");
+    iconButton.on("click", function () {
+        $("#cont_phone").removeClass("aos-animate");
+        setTimeout(function () {
+            $("#cont_phone").addClass("aos-animate");
+        }, 400);
+    });
 });

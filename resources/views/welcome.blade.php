@@ -63,7 +63,7 @@
             <div class=" d-flex flex-column align-items-center justify-content-evenly h-100 ">
                 {{-- <img src="{{ secure_asset('assets/logo/logo.png') }}" alt="" class="img-fluid  "
                     style="width: 150px"> --}}
-                <div>
+                <div id="cont_phone" data-aos="fade-left" data-aos-delay="0" data-aos-duration="1300">
                     <div class="nav-item mb-3 display-6"><a class="off-link active" href="#slider1">Accueil</a>
                     </div>
                     <div class="nav-item mb-3 display-6"><a class=" off-link" href="#about">Qui sommes
@@ -251,8 +251,8 @@
                     <a class="text-white text-decoration-none " href="tel:+33 06 52 45 55 32"> <i
                             class="fas fa-phone-alt" aria-hidden="true"></i> +33 06 52 45 55 32 </a>
                 </div>
-                <button class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"><span
-                        class="visually-hidden">Toggle navigation</span><span
+                <button class="navbar-toggler" data-bs-toggle="offcanvas" id="open_side"
+                    data-bs-target="#offcanvasNavbar"><span class="visually-hidden">Toggle navigation</span><span
                         class="navbar-toggler-icon"></span></button>
                 <div id="navcol-3" class="collapse navbar-collapse">
                     <ul class="navbar-nav mx-auto">
